@@ -1,0 +1,345 @@
+version: "4.1"
+name: pro
+type: ARM
+deviceName: null
+packDir: null
+srcDirs: []
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: CMSIS&Startup
+      files:
+        - path: ../00_Libraries/CMSIS/system_stm32f4xx.c
+        - path: ../00_Libraries/CMSIS/startup_stm32f427_437xx.s
+      folders: []
+    - name: Libraries
+      files: []
+      folders:
+        - name: STM32F4xx_StdPeriph_Driver
+          files:
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/misc.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_adc.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_can.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_cec.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_crc.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_cryp.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_cryp_aes.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_cryp_des.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_cryp_tdes.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dac.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dcmi.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dfsdm.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dma.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dma2d.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dsi.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_exti.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_flash.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_flash_ramfunc.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_fmc.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_fmpi2c.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_fsmc.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_gpio.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_hash.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_hash_md5.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_hash_sha1.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_i2c.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_iwdg.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_lptim.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_ltdc.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_pwr.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_qspi.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_rcc.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_rng.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_rtc.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_sai.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_sdio.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_spdifrx.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_spi.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_syscfg.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_tim.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_usart.c
+            - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_wwdg.c
+          folders: []
+    - name: Middlewares
+      files: []
+      folders:
+        - name: FreeRTOS_CORE
+          files: []
+          folders: []
+        - name: FreeRTOS_PORT
+          files: []
+          folders: []
+        - name: Mavlink
+          files: []
+          folders: []
+        - name: FatFs
+          files:
+            - path: ../01_Middlewares/FatFs/diskio.c
+            - path: ../01_Middlewares/FatFs/diskio.h
+            - path: ../01_Middlewares/FatFs/ff.c
+            - path: ../01_Middlewares/FatFs/ff.h
+            - path: ../01_Middlewares/FatFs/ffconf.h
+            - path: ../01_Middlewares/FatFs/ffsystem.c
+            - path: ../01_Middlewares/FatFs/ffunicode.c
+          folders: []
+    - name: Common
+      files:
+        - path: ../02_Common/RINGBUFFER/ringbuff.c
+        - path: ../02_Common/COMMON/com_data.c
+        - path: ../02_Common/COMMON/pro_common.c
+        - path: ../02_Common/COMMON/com_type.h
+      folders: []
+    - name: BSP
+      files:
+        - path: ../03_BSP/DMA/bsp_dma.c
+        - path: ../03_BSP/EXTI/bsp_exti.c
+        - path: ../03_BSP/IIC_SW/i2c_sw.c
+        - path: ../03_BSP/SPI/bsp_spi.c
+        - path: ../03_BSP/SYS/bsp_sys.c
+        - path: ../03_BSP/SYSTICK/bsp_systick.c
+        - path: ../03_BSP/TIM/bsp_tim.c
+        - path: ../03_BSP/USART/bsp_usart.c
+        - path: ../03_BSP/SDIO/bsp_sdio_sd.c
+        - path: ../03_BSP/Flash/bsp_flash.c
+      folders: []
+    - name: Drivers
+      files:
+        - path: ../04_Driver/MPU6000/bsp_mpu6000.c
+        - path: ../04_Driver/NEO_M8N/gps.c
+        - path: ../04_Driver/NEO_M8N/ubx.c
+        - path: ../04_Driver/HMC5883/hmc5883l.c
+        - path: ../04_Driver/MS5611/ms5611.c
+        - path: ../04_Driver/MS5611/ms5611_port.c
+      folders: []
+    - name: Communication
+      files:
+        - path: ../05_Communication/Mavlink/mavlink_handle.c
+        - path: ../05_Communication/IC_COMM/ioc_protocol.c
+      folders: []
+    - name: App
+      files: []
+      folders:
+        - name: Algorithm
+          files:
+            - path: ../06_Application/00_Algorithm/mahony.c
+            - path: ../06_Application/00_Algorithm/pid.c
+            - path: ../06_Application/00_Algorithm/filter.c
+          folders: []
+        - name: Sen_Processing
+          files:
+            - path: ../06_Application/01_Sensor_Processing/imu_processing.c
+            - path: ../06_Application/01_Sensor_Processing/mag_processing.c
+            - path: ../06_Application/01_Sensor_Processing/baro_processing.c
+          folders: []
+        - name: Navigation
+          files:
+            - path: ../06_Application/02_Navigation/attitude_estimate.c
+            - path: ../06_Application/02_Navigation/position_estimate.c
+          folders: []
+        - name: Guidance
+          files:
+            - path: ../06_Application/03_Guidance/guidance.c
+            - path: ../06_Application/03_Guidance/rc_mapper.c
+          folders: []
+        - name: Control
+          files:
+            - path: ../06_Application/04_Control/attitude_control.c
+          folders: []
+        - name: Task
+          files:
+            - path: ../06_Application/05_Task/task_datalog.c
+            - path: ../06_Application/05_Task/task_integrated_navigation.c
+            - path: ../06_Application/05_Task/task_sensor.c
+            - path: ../06_Application/05_Task/task_ioc.c
+            - path: ../06_Application/05_Task/task_guidance.c
+            - path: ../06_Application/05_Task/task_control.c
+          folders: []
+    - name: User
+      files:
+        - path: ../07_User/main.c
+        - path: ../07_User/stm32f4xx_it.c
+        - path: ../07_User/pro_config.h
+        - path: ../07_User/pro_include.h
+      folders: []
+    - name: Readme
+      files: []
+      folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: f7793438020d4670e9de714c90f951c0
+targets:
+  Drone_F427:
+    cppPreprocessAttrs:
+      defineList:
+        - USE_STM324x7I_EVAL
+        - STM32F427_437xx
+        - USE_STDPERIPH_DRIVER
+      incList:
+        - ../00_Libraries/CMSIS
+        - ../00_Libraries/STM32F10x_StdPeriph_Driver/inc
+        - ../01_Middlewares/FatFs
+        - ../01_Middlewares/FreeRTOS/include
+        - ../01_Middlewares/FreeRTOS/portable/RVDS/ARM_CM3
+        - ../01_Middlewares/Mavlink/common
+        - ../01_Middlewares/Mavlink
+        - ../02_Common/COMMON
+        - ../02_Common/RINGBUFFER
+        - ../03_BSP/DMA
+        - ../03_BSP/EXTI
+        - ../03_BSP/IIC_SW
+        - ../03_BSP/SPI
+        - ../03_BSP/SYS
+        - ../03_BSP/SYSTICK
+        - ../03_BSP/TIM
+        - ../03_BSP/USART
+        - ../03_BSP/Flash
+        - ../03_BSP/SDIO
+        - ../04_Driver/MPU6000
+        - ../04_Driver/MS5611
+        - ../04_Driver/NEO_M8N
+        - ../04_Driver/HMC5883
+        - ../05_Communication/Mavlink
+        - ../05_Communication/SBUS
+        - ../05_Communication/UBX
+        - ../05_Communication/IC_COMM
+        - ../06_Application/00_Algorithm
+        - ../06_Application/01_Sensor_Processing
+        - ../06_Application/02_Navigation
+        - ../06_Application/03_Guidance
+        - ../06_Application/04_Control
+        - ../06_Application/05_Task
+        - ../07_User
+        - .cmsis/include
+        - RTE/_Drone_F427
+      libList: []
+    excludeList:
+      - <virtual_root>/Libraries/STM32F4xx_StdPeriph_Driver/stm32f4xx_fsmc.c
+      - <virtual_root>/BSP/bsp_sys.c
+    toolchain: AC5
+    toolchainConfigMap:
+      AC5:
+        archExtensions: ""
+        cpuType: Cortex-M4
+        floatingPointHardware: single
+        options:
+          version: 4
+          afterBuildTasks: []
+          asm-compiler: {}
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: --diag_suppress=66
+            C_FLAGS: --diag_suppress=66
+            c99-mode: true
+            gnu-extensions: true
+            one-elf-section-per-function: true
+            optimization: level-0
+            warnings: all-warnings
+          global:
+            output-debug-info: enable
+            use-microLIB: true
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            output-format: elf
+            ro-base: "0x08000000"
+            rw-base: "0x20000000"
+            xo-base: ""
+        scatterFilePath: ""
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 3
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 1
+              isChecked: true
+              mem:
+                size: "0x30000"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x10000"
+                startAddr: "0x10000000"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 3
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 1
+              isChecked: true
+              isStartup: true
+              mem:
+                size: "0x200000"
+                startAddr: "0x8000000"
+              tag: IROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: IROM
+        useCustomScatterFile: false
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: "null"
+          vendor: "null"
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+      STLink:
+        address: "0x8000000"
+        bin: ""
+        elFile: None
+        optionBytes: .eide/drone_f427.st.option.bytes.ini
+        otherCmds: ""
+        proType: SWD
+        resetMode: default
+        runAfterProgram: true
+        speed: 4000
+    uploader: STLink

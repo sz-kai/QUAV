@@ -1,0 +1,34 @@
+# dot files
+/.vscode/launch.json
+/.settings
+/.eide/log
+/.eide.usr.ctx.json
+
+# project out
+/build
+/bin
+/obj
+/out
+
+# eide template
+*.ept
+*.eide-template
+
+# =============== User Added ===============
+
+# 1. EIDE Dependencies (类似于 node_modules)
+/.cmsis
+
+# 2. Keil/MDK Legacy Garbage (既然是从Keil导入，建议忽略Keil产生的垃圾文件)
+*.uvguix.*
+*.uvoptx
+*.bak
+*.dep
+Listings/
+Objects/
+RTE/
+# 注意：如果你的项目使用了 RTE 来管理源代码（而不是仅作配置），请不要忽略 RTE/
+
+# 3. System Files
+.DS_Store
+Thumbs.db
