@@ -7,16 +7,16 @@
 
   <Targets>
     <Target>
-      <TargetName>Drone_F427</TargetName>
+      <TargetName>pro</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32F427VITx</Device>
-          <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F4xx_DFP.3.0.0</PackID>
+          <Device>ARMCM4</Device>
+          <Vendor>ARM</Vendor>
+          <PackID>ARM.Cortex_DFP.1.1.0</PackID>
           <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00030000) IRAM2(0x10000000,0x00010000) IROM(0x08000000,0x00200000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -48,14 +48,14 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>.\Objects\</OutputDirectory>
+          <OutputDirectory>.\build\Keil\</OutputDirectory>
           <OutputName>pro</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath>.\Listings\</ListingPath>
+          <ListingPath>.\build\Keil\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
@@ -110,11 +110,11 @@
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments> -REMAP -MPU</SimDllArguments>
+          <SimDllArguments>-REMAP -MPU</SimDllArguments>
           <SimDlgDll>DARMSTM.DLL</SimDlgDll>
           <SimDlgDllArguments>-pSTM32F427VI</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments> -MPU</TargetDllArguments>
+          <TargetDllArguments>-MPU</TargetDllArguments>
           <TargetDlgDll>TARMSTM.DLL</TargetDlgDll>
           <TargetDlgDllArguments>-pSTM32F427VI</TargetDlgDllArguments>
         </DllOption>
@@ -338,9 +338,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>--diag_suppress=66</MiscControls>
-              <Define>USE_STM324x7I_EVAL, STM32F427_437xx, USE_STDPERIPH_DRIVER</Define>
+              <Define>USE_STM324x7I_EVAL,STM32F427_437xx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\00_Libraries\CMSIS;..\00_Libraries\STM32F10x_StdPeriph_Driver\inc;..\01_Middlewares\FatFs;..\01_Middlewares\FreeRTOS\include;..\01_Middlewares\FreeRTOS\portable\RVDS\ARM_CM3;..\01_Middlewares\Mavlink\common;..\01_Middlewares\Mavlink;..\02_Common\COMMON;..\02_Common\RINGBUFFER;..\03_BSP\DMA;..\03_BSP\EXTI;..\03_BSP\IIC_SW;..\03_BSP\SPI;..\03_BSP\SYS;..\03_BSP\SYSTICK;..\03_BSP\TIM;..\03_BSP\USART;..\03_BSP\Flash;..\03_BSP\SDIO;..\04_Driver\MPU6000;..\04_Driver\MS5611;..\04_Driver\NEO_M8N;..\04_Driver\HMC5883;..\05_Communication\Mavlink;..\05_Communication\SBUS;..\05_Communication\UBX;..\05_Communication\IC_COMM;..\06_Application\00_Algorithm;..\06_Application\01_Sensor_Processing;..\06_Application\02_Navigation;..\06_Application\03_Guidance;..\06_Application\04_Control;..\06_Application\05_Task;..\07_User</IncludePath>
+              <IncludePath>..\00_Libraries\CMSIS;..\00_Libraries\STM32F10x_StdPeriph_Driver\inc;..\01_Middlewares\FatFs;..\01_Middlewares\FreeRTOS\include;..\01_Middlewares\FreeRTOS\portable\RVDS\ARM_CM3;..\01_Middlewares\Mavlink\common;..\01_Middlewares\Mavlink;..\02_Common\COMMON;..\02_Common\RINGBUFFER;..\03_BSP\DMA;..\03_BSP\EXTI;..\03_BSP\IIC_SW;..\03_BSP\SPI;..\03_BSP\SYS;..\03_BSP\SYSTICK;..\03_BSP\TIM;..\03_BSP\USART;..\03_BSP\Flash;..\03_BSP\SDIO;..\04_Driver\MPU6000;..\04_Driver\MS5611;..\04_Driver\NEO_M8N;..\04_Driver\HMC5883;..\05_Communication\Mavlink;..\05_Communication\SBUS;..\05_Communication\UBX;..\05_Communication\IC_COMM;..\06_Application\00_Algorithm;..\06_Application\01_Sensor_Processing;..\06_Application\02_Navigation;..\06_Application\03_Guidance;..\06_Application\04_Control;..\06_Application\05_Task;..\07_User;.cmsis\include;RTE\_Drone_F427</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -356,7 +356,7 @@
             <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define></Define>
+              <Define>USE_STM324x7I_EVAL,STM32F427_437xx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -382,362 +382,197 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>CMSIS&amp;Startup</GroupName>
+          <GroupName>User</GroupName>
           <Files>
             <File>
-              <FileName>system_stm32f4xx.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\00_Libraries\CMSIS\system_stm32f4xx.c</FilePath>
+              <FilePath>../07_User/main.c</FilePath>
             </File>
             <File>
-              <FileName>startup_stm32f427_437xx.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\00_Libraries\CMSIS\startup_stm32f427_437xx.s</FilePath>
+              <FileName>stm32f4xx_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../07_User/stm32f4xx_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>pro_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../07_User/pro_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>pro_include.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../07_User/pro_include.h</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Libraries/STM32F4xx_StdPeriph_Driver</GroupName>
+          <GroupName>App/Task</GroupName>
           <Files>
             <File>
-              <FileName>misc.c</FileName>
+              <FileName>task_datalog.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\misc.c</FilePath>
+              <FilePath>../06_Application/05_Task/task_datalog.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_adc.c</FileName>
+              <FileName>task_integrated_navigation.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_adc.c</FilePath>
+              <FilePath>../06_Application/05_Task/task_integrated_navigation.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_can.c</FileName>
+              <FileName>task_sensor.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_can.c</FilePath>
+              <FilePath>../06_Application/05_Task/task_sensor.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_cec.c</FileName>
+              <FileName>task_ioc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_cec.c</FilePath>
+              <FilePath>../06_Application/05_Task/task_ioc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_crc.c</FileName>
+              <FileName>task_guidance.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_crc.c</FilePath>
+              <FilePath>../06_Application/05_Task/task_guidance.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_cryp.c</FileName>
+              <FileName>task_control.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_cryp.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_cryp_aes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_cryp_aes.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_cryp_des.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_cryp_des.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_cryp_tdes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_dac.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_dac.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_dbgmcu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_dbgmcu.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_dcmi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_dcmi.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_dfsdm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_dfsdm.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_dma.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_dma2d.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_dma2d.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_dsi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_dsi.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_exti.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_exti.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_flash_ramfunc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_flash_ramfunc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_fmc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_fmc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_fmpi2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_fmpi2c.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_fsmc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_fsmc.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>stm32f4xx_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_hash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_hash.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_hash_md5.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_hash_md5.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_hash_sha1.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_hash_sha1.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_i2c.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_iwdg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_iwdg.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_lptim.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_lptim.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_ltdc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_ltdc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_pwr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_pwr.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_qspi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_qspi.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_rcc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_rcc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_rng.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_rng.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_rtc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_rtc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_sai.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_sai.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_sdio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_sdio.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_spdifrx.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_spdifrx.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_syscfg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_syscfg.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_tim.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_tim.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_usart.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_wwdg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\00_Libraries\STM32F10x_StdPeriph_Driver\src\stm32f4xx_wwdg.c</FilePath>
+              <FilePath>../06_Application/05_Task/task_control.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Middlewares/FreeRTOS_CORE</GroupName>
-        </Group>
-        <Group>
-          <GroupName>Middlewares/FreeRTOS_PORT</GroupName>
-        </Group>
-        <Group>
-          <GroupName>Middlewares/Mavlink</GroupName>
-        </Group>
-        <Group>
-          <GroupName>Middlewares/FatFs</GroupName>
+          <GroupName>App/Control</GroupName>
           <Files>
             <File>
-              <FileName>diskio.c</FileName>
+              <FileName>attitude_control.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\01_Middlewares\FatFs\diskio.c</FilePath>
+              <FilePath>../06_Application/04_Control/attitude_control.c</FilePath>
             </File>
             <File>
-              <FileName>diskio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\01_Middlewares\FatFs\diskio.h</FilePath>
-            </File>
-            <File>
-              <FileName>ff.c</FileName>
+              <FileName>position_control.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\01_Middlewares\FatFs\ff.c</FilePath>
-            </File>
-            <File>
-              <FileName>ff.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\01_Middlewares\FatFs\ff.h</FilePath>
-            </File>
-            <File>
-              <FileName>ffconf.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\01_Middlewares\FatFs\ffconf.h</FilePath>
-            </File>
-            <File>
-              <FileName>ffsystem.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\01_Middlewares\FatFs\ffsystem.c</FilePath>
-            </File>
-            <File>
-              <FileName>ffunicode.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\01_Middlewares\FatFs\ffunicode.c</FilePath>
+              <FilePath>../06_Application/04_Control/position_control.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Common</GroupName>
+          <GroupName>App/Guidance</GroupName>
           <Files>
             <File>
-              <FileName>ringbuff.c</FileName>
+              <FileName>guidance.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\02_Common\RINGBUFFER\ringbuff.c</FilePath>
+              <FilePath>../06_Application/03_Guidance/guidance.c</FilePath>
             </File>
             <File>
-              <FileName>com_data.c</FileName>
+              <FileName>rc_mapper.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\02_Common\COMMON\com_data.c</FilePath>
+              <FilePath>../06_Application/03_Guidance/rc_mapper.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>App/Navigation</GroupName>
+          <Files>
+            <File>
+              <FileName>attitude_estimate.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../06_Application/02_Navigation/attitude_estimate.c</FilePath>
             </File>
             <File>
-              <FileName>pro_common.c</FileName>
+              <FileName>position_estimate.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\02_Common\COMMON\pro_common.c</FilePath>
+              <FilePath>../06_Application/02_Navigation/position_estimate.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>App/Sen_Processing</GroupName>
+          <Files>
+            <File>
+              <FileName>imu_processing.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../06_Application/01_Sensor_Processing/imu_processing.c</FilePath>
             </File>
             <File>
-              <FileName>com_type.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\02_Common\COMMON\com_type.h</FilePath>
+              <FileName>mag_processing.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../06_Application/01_Sensor_Processing/mag_processing.c</FilePath>
+            </File>
+            <File>
+              <FileName>baro_processing.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../06_Application/01_Sensor_Processing/baro_processing.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>App/Algorithm</GroupName>
+          <Files>
+            <File>
+              <FileName>mahony.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../06_Application/00_Algorithm/mahony.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../06_Application/00_Algorithm/pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>filter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../06_Application/00_Algorithm/filter.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Communication</GroupName>
+          <Files>
+            <File>
+              <FileName>mavlink_handle.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../05_Communication/Mavlink/mavlink_handle.c</FilePath>
+            </File>
+            <File>
+              <FileName>ioc_protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../05_Communication/IC_COMM/ioc_protocol.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_mpu6000.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../04_Driver/MPU6000/bsp_mpu6000.c</FilePath>
+            </File>
+            <File>
+              <FileName>gps.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../04_Driver/NEO_M8N/gps.c</FilePath>
+            </File>
+            <File>
+              <FileName>ubx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../04_Driver/NEO_M8N/ubx.c</FilePath>
+            </File>
+            <File>
+              <FileName>hmc5883l.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../04_Driver/HMC5883/hmc5883l.c</FilePath>
+            </File>
+            <File>
+              <FileName>ms5611.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../04_Driver/MS5611/ms5611.c</FilePath>
+            </File>
+            <File>
+              <FileName>ms5611_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../04_Driver/MS5611/ms5611_port.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -747,27 +582,27 @@
             <File>
               <FileName>bsp_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\03_BSP\DMA\bsp_dma.c</FilePath>
+              <FilePath>../03_BSP/DMA/bsp_dma.c</FilePath>
             </File>
             <File>
               <FileName>bsp_exti.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\03_BSP\EXTI\bsp_exti.c</FilePath>
+              <FilePath>../03_BSP/EXTI/bsp_exti.c</FilePath>
             </File>
             <File>
               <FileName>i2c_sw.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\03_BSP\IIC_SW\i2c_sw.c</FilePath>
+              <FilePath>../03_BSP/IIC_SW/i2c_sw.c</FilePath>
             </File>
             <File>
               <FileName>bsp_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\03_BSP\SPI\bsp_spi.c</FilePath>
+              <FilePath>../03_BSP/SPI/bsp_spi.c</FilePath>
             </File>
             <File>
               <FileName>bsp_sys.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\03_BSP\SYS\bsp_sys.c</FilePath>
+              <FilePath>../03_BSP/SYS/bsp_sys.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -776,11 +611,11 @@
                   <RVCTOtherData>0</RVCTOtherData>
                   <ModuleSelection>0</ModuleSelection>
                   <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>0</AssembleAssemblyFile>
+                  <PublicsOnly>0</PublicsOnly>
+                  <StopOnExitCode>3</StopOnExitCode>
                   <CustomArgument></CustomArgument>
                   <IncludeLibraryModules></IncludeLibraryModules>
                   <ComprImg>1</ComprImg>
@@ -823,87 +658,207 @@
             <File>
               <FileName>bsp_systick.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\03_BSP\SYSTICK\bsp_systick.c</FilePath>
+              <FilePath>../03_BSP/SYSTICK/bsp_systick.c</FilePath>
             </File>
             <File>
               <FileName>bsp_tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\03_BSP\TIM\bsp_tim.c</FilePath>
+              <FilePath>../03_BSP/TIM/bsp_tim.c</FilePath>
             </File>
             <File>
               <FileName>bsp_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\03_BSP\USART\bsp_usart.c</FilePath>
+              <FilePath>../03_BSP/USART/bsp_usart.c</FilePath>
             </File>
             <File>
               <FileName>bsp_sdio_sd.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\03_BSP\SDIO\bsp_sdio_sd.c</FilePath>
+              <FilePath>../03_BSP/SDIO/bsp_sdio_sd.c</FilePath>
             </File>
             <File>
               <FileName>bsp_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\03_BSP\Flash\bsp_flash.c</FilePath>
+              <FilePath>../03_BSP/Flash/bsp_flash.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Drivers</GroupName>
+          <GroupName>Common</GroupName>
           <Files>
             <File>
-              <FileName>bsp_mpu6000.c</FileName>
+              <FileName>ringbuff.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\04_Driver\MPU6000\bsp_mpu6000.c</FilePath>
+              <FilePath>../02_Common/RINGBUFFER/ringbuff.c</FilePath>
             </File>
             <File>
-              <FileName>gps.c</FileName>
+              <FileName>com_data.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\04_Driver\NEO_M8N\gps.c</FilePath>
+              <FilePath>../02_Common/COMMON/com_data.c</FilePath>
             </File>
             <File>
-              <FileName>ubx.c</FileName>
+              <FileName>pro_common.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\04_Driver\NEO_M8N\ubx.c</FilePath>
+              <FilePath>../02_Common/COMMON/pro_common.c</FilePath>
             </File>
             <File>
-              <FileName>hmc5883l.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\04_Driver\HMC5883\hmc5883l.c</FilePath>
-            </File>
-            <File>
-              <FileName>ms5611.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\04_Driver\MS5611\ms5611.c</FilePath>
-            </File>
-            <File>
-              <FileName>ms5611_port.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\04_Driver\MS5611\ms5611_port.c</FilePath>
+              <FileName>com_type.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../02_Common/COMMON/com_type.h</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Communication</GroupName>
+          <GroupName>Middlewares/FatFs</GroupName>
           <Files>
             <File>
-              <FileName>mavlink_handle.c</FileName>
+              <FileName>diskio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\05_Communication\Mavlink\mavlink_handle.c</FilePath>
+              <FilePath>../01_Middlewares/FatFs/diskio.c</FilePath>
             </File>
             <File>
-              <FileName>ioc_protocol.c</FileName>
+              <FileName>diskio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../01_Middlewares/FatFs/diskio.h</FilePath>
+            </File>
+            <File>
+              <FileName>ff.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\05_Communication\IC_COMM\ioc_protocol.c</FilePath>
+              <FilePath>../01_Middlewares/FatFs/ff.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../01_Middlewares/FatFs/ff.h</FilePath>
+            </File>
+            <File>
+              <FileName>ffconf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../01_Middlewares/FatFs/ffconf.h</FilePath>
+            </File>
+            <File>
+              <FileName>ffsystem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../01_Middlewares/FatFs/ffsystem.c</FilePath>
+            </File>
+            <File>
+              <FileName>ffunicode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../01_Middlewares/FatFs/ffunicode.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>App/Algorithm</GroupName>
+          <GroupName>Libraries/STM32F4xx_StdPeriph_Driver</GroupName>
           <Files>
             <File>
-              <FileName>mahony.c</FileName>
+              <FileName>misc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\06_Application\00_Algorithm\mahony.c</FilePath>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/misc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_can.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_cec.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_cec.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_crc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_cryp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_cryp.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_cryp_aes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_cryp_aes.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_cryp_des.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_cryp_des.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_cryp_tdes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_cryp_tdes.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_dac.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dac.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_dbgmcu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_dcmi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dcmi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_dfsdm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dfsdm.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_dma2d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dma2d.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_dsi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_dsi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_exti.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_flash_ramfunc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_flash_ramfunc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_fmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_fmc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_fmpi2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_fmpi2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_fsmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_fsmc.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -911,12 +866,12 @@
                   <RVCTZI>0</RVCTZI>
                   <RVCTOtherData>0</RVCTOtherData>
                   <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>1</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>0</AssembleAssemblyFile>
+                  <PublicsOnly>0</PublicsOnly>
+                  <StopOnExitCode>3</StopOnExitCode>
                   <CustomArgument></CustomArgument>
                   <IncludeLibraryModules></IncludeLibraryModules>
                   <ComprImg>1</ComprImg>
@@ -957,190 +912,126 @@
               </FileOption>
             </File>
             <File>
-              <FileName>pid.c</FileName>
+              <FileName>stm32f4xx_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\06_Application\00_Algorithm\pid.c</FilePath>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_gpio.c</FilePath>
             </File>
             <File>
-              <FileName>filter.c</FileName>
+              <FileName>stm32f4xx_hash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\06_Application\00_Algorithm\filter.c</FilePath>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_hash.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hash_md5.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_hash_md5.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hash_sha1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_hash_sha1.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_iwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_iwdg.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_lptim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_lptim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_ltdc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_ltdc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_pwr.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_qspi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_qspi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_rcc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_rcc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_rng.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_rng.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_rtc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_sai.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_sai.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_sdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_sdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_spdifrx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_spdifrx.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_syscfg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_syscfg.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_wwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_wwdg.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>App/Sen_Processing</GroupName>
+          <GroupName>CMSIS&amp;Startup</GroupName>
           <Files>
             <File>
-              <FileName>imu_processing.c</FileName>
+              <FileName>system_stm32f4xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\06_Application\01_Sensor_Processing\imu_processing.c</FilePath>
+              <FilePath>../00_Libraries/CMSIS/system_stm32f4xx.c</FilePath>
             </File>
             <File>
-              <FileName>mag_processing.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\01_Sensor_Processing\mag_processing.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>1</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>baro_processing.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\01_Sensor_Processing\baro_processing.c</FilePath>
+              <FileName>startup_stm32f427_437xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>../00_Libraries/CMSIS/startup_stm32f427_437xx.s</FilePath>
             </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>App/Navigation</GroupName>
-          <Files>
-            <File>
-              <FileName>attitude_estimate.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\02_Navigation\attitude_estimate.c</FilePath>
-            </File>
-            <File>
-              <FileName>position_estimate.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\02_Navigation\position_estimate.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>App/Guidance</GroupName>
-          <Files>
-            <File>
-              <FileName>guidance.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\03_Guidance\guidance.c</FilePath>
-            </File>
-            <File>
-              <FileName>rc_mapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\03_Guidance\rc_mapper.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>App/Control</GroupName>
-          <Files>
-            <File>
-              <FileName>attitude_control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\04_Control\attitude_control.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>App/Task</GroupName>
-          <Files>
-            <File>
-              <FileName>task_datalog.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\05_Task\task_datalog.c</FilePath>
-            </File>
-            <File>
-              <FileName>task_integrated_navigation.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\05_Task\task_integrated_navigation.c</FilePath>
-            </File>
-            <File>
-              <FileName>task_sensor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\05_Task\task_sensor.c</FilePath>
-            </File>
-            <File>
-              <FileName>task_ioc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\05_Task\task_ioc.c</FilePath>
-            </File>
-            <File>
-              <FileName>task_guidance.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\05_Task\task_guidance.c</FilePath>
-            </File>
-            <File>
-              <FileName>task_control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\06_Application\05_Task\task_control.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>User</GroupName>
-          <Files>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\07_User\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_it.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\07_User\stm32f4xx_it.c</FilePath>
-            </File>
-            <File>
-              <FileName>pro_config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\07_User\pro_config.h</FilePath>
-            </File>
-            <File>
-              <FileName>pro_include.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\07_User\pro_include.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Readme</GroupName>
         </Group>
       </Groups>
     </Target>

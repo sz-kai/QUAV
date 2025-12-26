@@ -64,13 +64,13 @@ static void setpoint_yaw_calc(float rc_map, float *yaw_sp)
     /*1. 设定点计算，实现死区、锁头操作*/
     /*设定死区，杆量超过10%才动作*/
     /*下面计算出的yaw期望值范围为[-infty,infty],需要与解算出的yaw角度范围[-PI,PI]对应起来*/
-    if (rc_map > 0.09)
+    if (rc_map > 0.09f)
     {
-        *yaw_sp += SP_YAW_RATE_MAX * (rc_map - 0.09) / (1.0f - 0.09) * dt; /*这里进行了积分操作*/
+        *yaw_sp += SP_YAW_RATE_MAX * (rc_map - 0.09f) / (1.0f - 0.09f) * dt; /*这里进行了积分操作*/
     }
-    else if (rc_map < -0.09)
+    else if (rc_map < -0.09f)
     {
-        *yaw_sp += SP_YAW_RATE_MAX * (rc_map + 0.09) / (1.0f - 0.09) * dt; /*这里进行了积分操作*/
+        *yaw_sp += SP_YAW_RATE_MAX * (rc_map + 0.09f) / (1.0f - 0.09f) * dt; /*这里进行了积分操作*/
     }
     /*2. 限制在[-PI,PI]范围内*/
     if (*yaw_sp > PI)

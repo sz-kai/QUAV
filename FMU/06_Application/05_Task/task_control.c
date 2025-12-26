@@ -14,6 +14,7 @@
   */
 #include "task_control.h"
 #include "task_guidance.h"
+#include "task_integrated_navigation.h"
 
 void task_control_init(void)
 {

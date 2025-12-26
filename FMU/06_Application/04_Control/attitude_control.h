@@ -16,6 +16,7 @@
 #define __ATTITUDE_CONTROL_H
 
 #include "pro_include.h"
+#include "pid.h"
 
 /**
  * @brief ÈýÖá¿ØÖÆÁ¦¾Ø

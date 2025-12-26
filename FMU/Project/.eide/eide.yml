@@ -8,12 +8,12 @@ virtualFolder:
   name: <virtual_root>
   files: []
   folders:
-    - name: CMSIS&Startup
+    - name: 00_CMSIS_Startup
       files:
         - path: ../00_Libraries/CMSIS/system_stm32f4xx.c
         - path: ../00_Libraries/CMSIS/startup_stm32f427_437xx.s
       folders: []
-    - name: Libraries
+    - name: 01_Libraries
       files: []
       folders:
         - name: STM32F4xx_StdPeriph_Driver
@@ -62,7 +62,7 @@ virtualFolder:
             - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_usart.c
             - path: ../00_Libraries/STM32F10x_StdPeriph_Driver/src/stm32f4xx_wwdg.c
           folders: []
-    - name: Middlewares
+    - name: 02_Middlewares
       files: []
       folders:
         - name: FreeRTOS_CORE
@@ -84,14 +84,14 @@ virtualFolder:
             - path: ../01_Middlewares/FatFs/ffsystem.c
             - path: ../01_Middlewares/FatFs/ffunicode.c
           folders: []
-    - name: Common
+    - name: 03_Common
       files:
         - path: ../02_Common/RINGBUFFER/ringbuff.c
         - path: ../02_Common/COMMON/com_data.c
         - path: ../02_Common/COMMON/pro_common.c
         - path: ../02_Common/COMMON/com_type.h
       folders: []
-    - name: BSP
+    - name: 04_Peripherals
       files:
         - path: ../03_BSP/DMA/bsp_dma.c
         - path: ../03_BSP/EXTI/bsp_exti.c
@@ -104,7 +104,7 @@ virtualFolder:
         - path: ../03_BSP/SDIO/bsp_sdio_sd.c
         - path: ../03_BSP/Flash/bsp_flash.c
       folders: []
-    - name: Drivers
+    - name: 05_Drivers
       files:
         - path: ../04_Driver/MPU6000/bsp_mpu6000.c
         - path: ../04_Driver/NEO_M8N/gps.c
@@ -113,41 +113,41 @@ virtualFolder:
         - path: ../04_Driver/MS5611/ms5611.c
         - path: ../04_Driver/MS5611/ms5611_port.c
       folders: []
-    - name: Communication
+    - name: 06_Communication
       files:
         - path: ../05_Communication/Mavlink/mavlink_handle.c
         - path: ../05_Communication/IC_COMM/ioc_protocol.c
       folders: []
-    - name: App
+    - name: 07_Application
       files: []
       folders:
-        - name: Algorithm
+        - name: 01_Algorithm
           files:
             - path: ../06_Application/00_Algorithm/mahony.c
             - path: ../06_Application/00_Algorithm/pid.c
             - path: ../06_Application/00_Algorithm/filter.c
           folders: []
-        - name: Sen_Processing
+        - name: 02_Sensor_Processing
           files:
             - path: ../06_Application/01_Sensor_Processing/imu_processing.c
             - path: ../06_Application/01_Sensor_Processing/mag_processing.c
             - path: ../06_Application/01_Sensor_Processing/baro_processing.c
           folders: []
-        - name: Navigation
+        - name: 04_Navigation
           files:
             - path: ../06_Application/02_Navigation/attitude_estimate.c
             - path: ../06_Application/02_Navigation/position_estimate.c
           folders: []
-        - name: Guidance
+        - name: 03_Guidance
           files:
             - path: ../06_Application/03_Guidance/guidance.c
             - path: ../06_Application/03_Guidance/rc_mapper.c
           folders: []
-        - name: Control
+        - name: 05_Control
           files:
             - path: ../06_Application/04_Control/attitude_control.c
           folders: []
-        - name: Task
+        - name: 06_Task
           files:
             - path: ../06_Application/05_Task/task_datalog.c
             - path: ../06_Application/05_Task/task_integrated_navigation.c
@@ -156,14 +156,14 @@ virtualFolder:
             - path: ../06_Application/05_Task/task_guidance.c
             - path: ../06_Application/05_Task/task_control.c
           folders: []
-    - name: User
+    - name: 08_User
       files:
         - path: ../07_User/main.c
         - path: ../07_User/stm32f4xx_it.c
         - path: ../07_User/pro_config.h
         - path: ../07_User/pro_include.h
       folders: []
-    - name: Readme
+    - name: 09_Readme
       files: []
       folders: []
 dependenceList: []
